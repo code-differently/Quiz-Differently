@@ -1,0 +1,20 @@
+{
+  "name": "Quiz-Differently",
+  "version": "1.0.0",
+  "description": "",
+  "main": "QuizDifferently.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-differently/Quiz-Differently.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-differently/Quiz-Differently/issues"
+  },
+  "homepage": "https://github.com/code-differently/Quiz-Differently#readme"
+}
