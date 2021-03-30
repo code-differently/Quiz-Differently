@@ -54,7 +54,7 @@ test("sortDeckOfCards", () => {
     let quizDifferently = new QuizDifferently();
 
     let expected = [].concat(
-        ...["hearts", "diamonds", "clubs", "spades"].map(
+        ...["clubs", "diamonds", "hearts", "spades"].map(
             suit => {
                 let cards = [];
                 for(let i = 2; i <= 14; i++){
@@ -125,8 +125,8 @@ test("removeDuplicates test01", () => {
 test("removeDuplicates test02", () => {
 
     let quizDifferently = new QuizDifferently();
-    let expected = ["Kaleb", "Kaleb", "Kaleb", "Kaleb", "Kaleb"];
-    let names = ["Kaleb"];
+    let expected = ["Kaleb"];
+    let names = ["Kaleb", "Kaleb", "Kaleb", "Kaleb", "Kaleb"];
     
     let actual = quizDifferently.removeDuplicates(names);
 
@@ -138,7 +138,11 @@ test("missingNumber test01", () => {
 
     let quizDifferently = new QuizDifferently();
     let expected = 42;
-    let numbers = [...Array(100).keys()].splice(expected, 1).sort(() => Math.random() - 0.5);
+    let numbers = [...Array(101).keys()]
+    numbers.splice(expected, 1)
+    numbers.splice(0, 1)
+
+    numbers.sort(() => Math.random() - 0.5);
     
     let actual = quizDifferently.missingNumber(numbers);
 
@@ -150,7 +154,10 @@ test("missingNumber test02", () => {
 
     let quizDifferently = new QuizDifferently();
     let expected = 99;
-    let numbers = [...Array(100).keys()].splice(expected, 1).sort(() => Math.random() - 0.5);
+    let numbers = [...Array(101).keys()]
+    numbers.splice(expected, 1)
+    numbers.splice(0, 1)
+    numbers.sort(() => Math.random() - 0.5);
     
     let actual = quizDifferently.missingNumber(numbers);
 
