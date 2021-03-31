@@ -48,7 +48,21 @@ class QuizDifferently {
   // Ex. ["Daniel", "Kaleb", "Zan", "Mark", "Tariq", "Mark"]
   // Return the an arrary without any duplicates
   removeDuplicates(names) {
-    return names;
+    let rosterSet = new Set();
+    let noDupsRoster = [];
+
+    //insert roster of names to a Set object
+    //no duplicates will be inserted into set object
+    for (let i = 0; i < names.length; i++) {
+      rosterSet.add(names[i]);
+    }
+    //copy each name from the set into a new no duplicate name roster, "noDupsRoster"
+    rosterSet.forEach((name) => {
+      noDupsRoster.push(name);
+    });
+
+    //return names from no duplicate name roster, "noDupsRoster"
+    return noDupsRoster;
   }
 
   // Question 6
@@ -71,7 +85,7 @@ class QuizDifferently {
     }
     //find difference of the "numbers from 1 to 100" and "shuffled numbers received"
     missingNum = sumList - sumNumbers;
-    
+
     //the difference is the missing number. Return this difference,
     return missingNum;
   }
