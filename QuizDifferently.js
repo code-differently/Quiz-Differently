@@ -4,9 +4,16 @@ class QuizDifferently {
   // To represent the room of people, an array containing all the ages will be provided.
   // Ex. [40, 24, 16, 55, 40]
   // Return the average age of people in the room
-  averageAge(ages) {
-    return -1;
-  }
+    averageAge(ages) {
+      //sum ages of the room of people
+        let sum = 0;
+        ages.forEach(age => {
+            sum += age;
+        })
+      //get the avaerage by dividing the sum of ages by the number of people in the room
+      //return the the average age of people in the room
+      return (sum / ages.length);
+    }
 
   // Question 2
   // Given a room of people, find the most common name.
