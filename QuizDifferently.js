@@ -1,5 +1,5 @@
 class QuizDifferently {
-  // Qustion 1
+  // Question 1
   // Given a room of people, calculate the average age.
   // To represent the room of people, an array containing all the ages will be provided.
   // Ex. [40, 24, 16, 55, 40]
@@ -60,13 +60,11 @@ class QuizDifferently {
 
     //insert roster of names to a Set object
     //no duplicates will be inserted into set object
-    for (let i = 0; i < names.length; i++) {
-      rosterSet.add(names[i]);
-    }
+    //removed for loop and use forEach loop
+    names.forEach(name => rosterSet.add(name));
+
     //copy each name from the set into a new no duplicate name roster, "noDupsRoster"
-    rosterSet.forEach((name) => {
-      noDupsRoster.push(name);
-    });
+    rosterSet.forEach(name => noDupsRoster.push(name));
 
     //return names from no duplicate name roster, "noDupsRoster"
     return noDupsRoster;
