@@ -76,24 +76,29 @@ class QuizDifferently {
   // Ex. [3,4,1,5] with the missing value, and the answer, being 2
   // Return the missing value
   missingNumber(numbers) {
-    let sumList = 0;
+    
+    let n = 100;
+    let sumOneHundred = 0;
     let sumNumbers = 0;
     let missingNum = 0;
 
     //sum numbers from 1 to 100
-    for (let i = 1; i <= 100; i++) {
-      sumList += i;
-    }
+    // numbers from 1 to n = n(n+1)/2
+    sumOneHundred = n*(n + 1) / 2;
+    console.log("sumOneHundred: "+ sumOneHundred);
+
     //sum shuffled numbers received
     for (let i = 0; i < numbers.length; i++) {
       sumNumbers += Number(numbers[i]);
     }
     //find difference of the "numbers from 1 to 100" and "shuffled numbers received"
-    missingNum = sumList - sumNumbers;
-
+    missingNum = sumOneHundred - sumNumbers;
+    console.log("missingNum: "+ missingNum);
     //the difference is the missing number. Return this difference,
     return missingNum;
   }
 }
 
+let problem = new QuizDifferently();
+console.log(problem.missingNumber([3, 4, 1, 5]));
 module.exports = QuizDifferently;
